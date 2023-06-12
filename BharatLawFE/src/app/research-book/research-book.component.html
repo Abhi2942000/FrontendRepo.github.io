@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Book</title>
+</head>
+<body>
+  <div class="container" *ngIf="isContainerVisible">
+    <div class="content">
+      <h1>Research Name</h1>
+      <input type="text" placeholder="Ex:promisory note Should be registered">
+      <button class="green-button" (click)="onContinue()">Continue</button>
+      <button class="button-close" (click)="onClose()">Close</button>
+
+    </div>
+  </div>
+</body>
+</html>

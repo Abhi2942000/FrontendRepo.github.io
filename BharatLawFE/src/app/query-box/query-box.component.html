@@ -1,0 +1,23 @@
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <header class="header">
+      <div class="logo">
+        <img src="../assets/BharatLaw.jpg" alt="BharatLaw.." width="30" height="0">
+      </div>
+      <div class="login-dropdown">
+        <select formControlName="user">
+          <option value="" class="ld">Chintan</option>
+          <option value="username" class="ld">Username</option>
+          <option value="email" class="ld">Email</option>
+        </select>
+      </div>
+      
+    </header>
+  
+    <div class="container">
+      <a href="#" class="box" *ngFor="let box of boxes; let i = index" [formGroupName]="'box' + i">
+        <img [src]="box.image" [alt]="box.alt" width="100" height="100">
+      </a>
+    </div>
+  
+  </form>
+  
