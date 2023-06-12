@@ -1,0 +1,54 @@
+<head>
+  <link rel="stylesheet" href="registration.component.css">
+</head>
+<div class="container">
+  <div class="img">
+    <img src="assets\logo.png"  alt="Logo"/>
+  </div>
+  <h1>Create Your Account</h1>
+  <form (ngSubmit)="signup()" >
+  <div class="form-group">
+    <div class="input-container">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required [(ngModel)]="user.email" #emailInput="ngModel" >
+      <div *ngIf="emailInput.invalid && (emailInput.dirty || emailInput.touched)" class="error-message">
+        <p *ngIf="emailInput.errors?.['required']">Email is required</p>
+        <p *ngIf="emailInput.errors?.['email']">Invalid email</p>
+      </div>
+    </div>
+  </div>
+    <div class="input-container">
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Enter your password" required [(ngModel)]="user.password" #passwordInput="ngModel">
+      <div *ngIf="passwordInput.invalid && (passwordInput.dirty || passwordInput.touched)" class="error-message">
+        <p *ngIf="passwordInput.errors?.['required']">Password is required</p>
+      </div>
+    </div>
+   
+
+    <div class="input-container">
+      <label for="designation">Designation</label>
+      <select id="designation" name="designation" required [(ngModel)]="user.designation" #designationInput="ngModel">
+        <option value="" disabled selected>Select a designation</option>
+        <option value="Manager">Manager</option>
+        <option value="Engineer">Engineer</option>
+        <option value="Analyst">Analyst</option>
+      </select>
+      <div *ngIf="designationInput.invalid && (designationInput.dirty || designationInput.touched)" class="error-message">
+        <p *ngIf="designationInput.errors?.['required']">Designation is required</p>
+      </div>
+    </div>
+    
+    <div class="input-container">
+      <button type="submit" class="signup-button" >Continue</button>
+    </div>
+    <div class="text-center">
+    <div class="input-container">
+      <p class="signup-text">Already have an account? <a href="login.component.html" class="login-link">Log In</a></p>
+    </div>
+    <div class="input-container">
+      <p class="terms-text"><a href="#">Terms of Use</a> | <a href="#">Privacy Policy</a>.</p>
+    </div>
+  </div>
+  </form>
+</div>

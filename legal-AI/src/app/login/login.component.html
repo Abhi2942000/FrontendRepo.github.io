@@ -1,0 +1,44 @@
+<head>
+    <link rel="stylesheet" href="login.component.css">
+  </head>
+  <div class="container">
+   <div class="img">
+    <img src="assets\logo.png"  alt="Logo"/>
+  </div>
+      <h1>Welcome Back</h1>
+      <form>
+        <div class="input-container">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" ngModel="email">
+        </div>
+        <div class="input-container">
+          <label for="password">Password</label>
+          <div class="password-input">
+            <input type="password" id="password" name="password" placeholder="Enter your password" [type]="passwordFieldType" ngModel="password">
+            <button type="button" class="toggle-password" (click)="togglePasswordVisibility()">
+              <i class="fa" [ngClass]="{'fa-eye': passwordFieldType === 'password', 'fa-eye-slash': passwordFieldType === 'text'}"></i>
+            </button>
+          </div>
+        </div>
+        
+        
+              
+        <div class="input-container">
+          <a href="#" class="forgot-password">
+            <div class="text-center">Forgot Password?</div></a>
+        </div>
+        <div class="input-container">
+          <button type="submit" class="login-button" (click)=login()>Log In</button>
+        </div>
+        <div class="input-container">
+          <p class="signup-text">Don't have an account? <a href="registration.component.html" class="signup-link">Sign Up</a></p>
+        </div>
+        <div class="input-container ">
+            <button type="button" class="google-button google">
+            <img src="assets/google-logo.png" alt="Google Logo" class="google-logo">
+            Continue with Google
+          </button>
+        </div>
+      </form>
+    </div>
+    
